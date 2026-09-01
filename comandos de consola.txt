@@ -1,0 +1,25 @@
+php bin/console doctrine:database:create 		//CREAR BASE DE DATOS
+
+php bin/console doctrine:database:drop --forcé		//BORRAR BASE DE DATOS
+	
+php bin/console make:entity Evento 			//CREAR UNA ENTIDAD
+
+php bin/console doctrine:schema:create			//VOLCAR LOS DATOS EN LA BASE DE DATOS
+
+composer require --dev doctrine/doctrine-fixtures-bundle  //INSTALACION DE FIXTURE
+
+php bin/console doctrine:fixtures:load			//SIRVE PARA SUBIR DATOS A LA BD
+
+php bin/console make:form EventoType			//CREAR FORMTYPE
+
+
+php bin/console debug:router				//VER TODAS LAS RUTAS
+
+php bin/console debug:router nombre ruta		// PARA BUSCAR POR UN NAME 
+
+php bin/console cache:clear				//Limpiar cache
+
+
+symfony server:start					//Servidor local
+
+dump($eventos); die; (o dd();)					//me vuelca la cantidad de eventos en este caso
