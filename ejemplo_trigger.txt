@@ -1,0 +1,29 @@
+TRIGGER(Disparadores)
+
+un trigger es un objeto de la base de datos que se almacena en la misma, que se asocia a una tabla determinada, y que se dispara o ejecuta automaticamentecuando ocurre un evento(operacion INSERT,UPDATE o DELETE) en la tabla asociada.
+
+usos: validar datos, realizar calculos, generar copias de datos como medida de seguridad.
+
+Sintaxis:
+
+DELIMITER //
+CREATE TRIGGER NombreTrigger
+(after o before) <- MOMENTO EVENTO ON NombreTtigger -> (INSERT, UPDATE O DELETE)
+FOR EACH ROW
+BEGIN
+  cuerpo del trigger
+END//
+DELIMITER ;
+
+Ejemplo Trigger:
+
+DELIMITER //
+CREATE TRIGGER DescontarStock
+AFTER INSERT ON ventas
+FOR EACH ROW
+BEGIN
+
+update productos set stock=stock-New.cantidad where codigo=New.codigoproducto;
+
+END//
+DELIMITER ;
