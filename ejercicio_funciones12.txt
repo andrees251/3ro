@@ -1,0 +1,32 @@
+PRIMER EJEMPLO DE FUNCIONES ALMACENADAS, SON COMO LOS PROCEDIMIENTOS EN EL ORDEN
+
+DELIMITER //
+CREATE FUNCTION f_mayor(valor1 int, valor2 int)
+RETURNS int DETERMINISTIC
+
+BEGIN 
+if valor1>valor2 THEN
+	RETURN valor1;
+else 
+	RETURN valor2;
+end if;
+
+end//
+DELIMITER ;
+Se ha creado una función que recibe dos parámetros de tipo 
+entero y mediante la palabra clave returns indica el tipo de dato 
+que devolverá dicha función:
+
+Otra palabra clave que se especifica en la declaración de la 
+función es si la misma es determinística (es determinística si 
+retornan el mismo resultado si se las invoca enviando el mismo 
+valor de entrada).
+
+Cuando se encuentra un return dentro de la definición de la 
+función, finaliza inmediatamente retornando el valor indicado. 
+Los delimitadores (DELIMITER) cumplen la misma función que 
+en los procedimientos almacenados. 
+Finalmente, se invoca o llama a la función empleando la 
+cláusula select: 
+
+//DROP para borrar una función 
