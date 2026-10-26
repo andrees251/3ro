@@ -30,3 +30,21 @@ Finalmente, se invoca o llama a la función empleando la
 cláusula select: 
 
 //DROP para borrar una función 
+
+
+EJERCITACION
+
+DELIMITER //
+CREATE FUNCTION f_estrellas(cant tinyint)
+RETURNS varchar(15)DETERMINISTIC
+
+BEGIN
+DECLARE estrellas varchar(15) DEFAULT '';
+DECLARE x int DEFAULT 0;
+while x<cant do
+set estrellas=concat(estrellas,'*');
+set x=x+1;
+end while;
+RETURN estrellas;
+END//
+DELIMITER ;
